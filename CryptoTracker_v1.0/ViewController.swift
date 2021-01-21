@@ -27,8 +27,11 @@ class ViewController: UIViewController {
         let emailField = UITextField()
         emailField.placeholder = "Email Adress"
         emailField.layer.borderWidth = 1
+        emailField.autocapitalizationType = .none
         emailField.layer.cornerRadius = 12
         emailField.backgroundColor = BkgGreyedBlue
+        emailField.leftViewMode = .always
+        emailField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         return emailField
     }()
     
@@ -39,6 +42,8 @@ class ViewController: UIViewController {
         passField.isSecureTextEntry = true
         passField.layer.cornerRadius = 12
         passField.backgroundColor = BkgGreyedBlue
+        passField.leftViewMode = .always
+        passField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         return passField
     }()
     
@@ -50,6 +55,14 @@ class ViewController: UIViewController {
        return button
     }()
     
+    private let SignOutButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemGreen
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Log Out", for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(label)
@@ -58,6 +71,34 @@ class ViewController: UIViewController {
         view.addSubview(button)
         view.layer.contents = UIImage(named: "blockchainbkg")?.cgImage
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+        if FirebaseAuth.Auth.auth().currentUser != nil {
+            label.isHidden = true
+            emailField.isHidden = true
+            passwordField.isHidden = true
+            button.isHidden = true
+            
+            view.addSubview(SignOutButton)
+            SignOutButton.frame = CGRect(x: 20, y: 150, width: view.frame.size.width-40, height: 52)
+            SignOutButton.addTarget(self, action: #selector(logOutTapped), for: .touchUpInside)
+        }
+    }
+    
+    @objc private func logOutTapped() {
+        do {
+            try FirebaseAuth.Auth.auth().signOut()
+            
+            label.isHidden = true
+            emailField.isHidden = true
+            passwordField.isHidden = true
+            button.isHidden = true
+            
+            SignOutButton.removeFromSuperview()
+            
+        }
+        catch {
+            print("An error occurred")
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,7 +124,9 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        emailField.becomeFirstResponder()
+        if FirebaseAuth.Auth.auth().currentUser == nil {
+            emailField.becomeFirstResponder()
+        }
     }
     @objc private func didTapButton() {
         print("Continue button tapped")
@@ -118,6 +161,9 @@ class ViewController: UIViewController {
             strongSelf.passwordField.isHidden = true
             strongSelf.button.isHidden = true
             
+            strongSelf.emailField.resignFirstResponder()
+            strongSelf.passField.resignFirstResponder()
+            
         })
     
     }
@@ -147,6 +193,9 @@ class ViewController: UIViewController {
                                             strongSelf.emailField.isHidden = true
                                             strongSelf.passwordField.isHidden = true
                                             strongSelf.button.isHidden = true
+                                            
+                                            strongSelf.emailField.resignFirstResponder()
+                                            strongSelf.passField.resignFirstResponder()
                                         })
         }))
         alert.addAction(UIAlertAction(title: "Cancel",
