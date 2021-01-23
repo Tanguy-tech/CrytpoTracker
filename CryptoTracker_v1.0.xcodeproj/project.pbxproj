@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4610D73AA14666CF892324AB /* Pods_CryptoTracker_v1_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F764D633C92D5D402DDDEC /* Pods_CryptoTracker_v1_0.framework */; };
-		559F20C925B8C67F001AE835 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559F20C825B8C67F001AE835 /* GoogleService-Info.plist */; };
+		55887F1525BC86390011C465 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559F20C825B8C67F001AE835 /* GoogleService-Info.plist */; };
+		559F7C5C25BCA8D7008B4AB1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F7C5B25BCA8D7008B4AB1 /* SignUpViewController.swift */; };
+		559F7C6125BCA93C008B4AB1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F7C6025BCA93C008B4AB1 /* Utilities.swift */; };
+		559F7C6525BCA95B008B4AB1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F7C6425BCA95B008B4AB1 /* Constants.swift */; };
+		559F7C6825BCA9C6008B4AB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F7C6725BCA9C6008B4AB1 /* LoginViewController.swift */; };
+		559F7C6D25BCA9F8008B4AB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F7C6C25BCA9F8008B4AB1 /* HomeViewController.swift */; };
 		55FC468925B8C6250026AFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC468825B8C6250026AFE6 /* AppDelegate.swift */; };
 		55FC468B25B8C6250026AFE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC468A25B8C6250026AFE6 /* SceneDelegate.swift */; };
 		55FC468D25B8C6250026AFE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC468C25B8C6250026AFE6 /* ViewController.swift */; };
@@ -20,6 +25,11 @@
 /* Begin PBXFileReference section */
 		5498E3454C98DB7F795CB7C1 /* Pods-CryptoTracker_v1.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker_v1.0.release.xcconfig"; path = "Target Support Files/Pods-CryptoTracker_v1.0/Pods-CryptoTracker_v1.0.release.xcconfig"; sourceTree = "<group>"; };
 		559F20C825B8C67F001AE835 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		559F7C5B25BCA8D7008B4AB1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		559F7C6025BCA93C008B4AB1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		559F7C6425BCA95B008B4AB1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		559F7C6725BCA9C6008B4AB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		559F7C6C25BCA9F8008B4AB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55FC468525B8C6250026AFE6 /* CryptoTracker_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FC468825B8C6250026AFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55FC468A25B8C6250026AFE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +71,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		559F7C5A25BCA8A2008B4AB1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55FC468C25B8C6250026AFE6 /* ViewController.swift */,
+				559F7C5B25BCA8D7008B4AB1 /* SignUpViewController.swift */,
+				559F7C6725BCA9C6008B4AB1 /* LoginViewController.swift */,
+				559F7C6C25BCA9F8008B4AB1 /* HomeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		559F7C5F25BCA924008B4AB1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				559F7C6025BCA93C008B4AB1 /* Utilities.swift */,
+				559F7C6425BCA95B008B4AB1 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		55FC467C25B8C6250026AFE6 = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +114,9 @@
 			children = (
 				559F20C825B8C67F001AE835 /* GoogleService-Info.plist */,
 				55FC468825B8C6250026AFE6 /* AppDelegate.swift */,
+				559F7C5F25BCA924008B4AB1 /* Helpers */,
+				559F7C5A25BCA8A2008B4AB1 /* View Controllers */,
 				55FC468A25B8C6250026AFE6 /* SceneDelegate.swift */,
-				55FC468C25B8C6250026AFE6 /* ViewController.swift */,
 				55FC468E25B8C6250026AFE6 /* Main.storyboard */,
 				55FC469125B8C6260026AFE6 /* Assets.xcassets */,
 				55FC469325B8C6260026AFE6 /* LaunchScreen.storyboard */,
@@ -154,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55FC469525B8C6260026AFE6 /* LaunchScreen.storyboard in Resources */,
-				559F20C925B8C67F001AE835 /* GoogleService-Info.plist in Resources */,
+				55887F1525BC86390011C465 /* GoogleService-Info.plist in Resources */,
 				55FC469225B8C6260026AFE6 /* Assets.xcassets in Resources */,
 				55FC469025B8C6250026AFE6 /* Main.storyboard in Resources */,
 			);
@@ -212,6 +243,11 @@
 				55FC468D25B8C6250026AFE6 /* ViewController.swift in Sources */,
 				55FC468925B8C6250026AFE6 /* AppDelegate.swift in Sources */,
 				55FC468B25B8C6250026AFE6 /* SceneDelegate.swift in Sources */,
+				559F7C6125BCA93C008B4AB1 /* Utilities.swift in Sources */,
+				559F7C5C25BCA8D7008B4AB1 /* SignUpViewController.swift in Sources */,
+				559F7C6525BCA95B008B4AB1 /* Constants.swift in Sources */,
+				559F7C6D25BCA9F8008B4AB1 /* HomeViewController.swift in Sources */,
+				559F7C6825BCA9C6008B4AB1 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2J36K2927;
 				INFOPLIST_FILE = CryptoTracker_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,6 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2J36K2927;
 				INFOPLIST_FILE = CryptoTracker_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

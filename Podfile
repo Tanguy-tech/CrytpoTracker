@@ -7,5 +7,6 @@ target 'CryptoTracker_v1.0' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
 end
