@@ -13,6 +13,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setUpElements()
+        view.layer.contents = UIImage(named: "blockchainbkg")?.cgImage
     }
     
     func setUpElements() {
